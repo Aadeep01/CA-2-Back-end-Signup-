@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const AuthRoutes = require("./routes/AuthRoutes");
+const authRoutes = require("./routes/AuthRoutes");
 
 dotenv.config();
 
@@ -19,7 +19,7 @@ mongoose
     process.exit(1);
   });
 
-app.use("/api/auth", AuthRoutes);
+app.use("/api/auth", authRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
